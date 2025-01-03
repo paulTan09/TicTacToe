@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#turnIndicator {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+#resetButton {
+    margin: 25px 0;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+#resetButton:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+#resetButton:active {
+    transform: translateY(0);
+}
+
+.tttGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cell:active {
+    transform: scale(0.95);
+}
+
+#scoreDisplay {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+#resultDisplay {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #4a90e2;
+    margin-top: 20px;
+    padding: 10px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Add different colors for X and O */
+.cell:has(:contains("X")) {
+    color: #FF6B6B;
+}
+
+.cell:has(:contains("O")) {
+    color: #4ECDC4;
+}
+
+/* Media queries for better mobile support */
+@media (max-width: 480px) {
+    .tttGrid {
+        grid-template-columns: repeat(3, 90px);
+        grid-gap: 8px;
+    }
+    
+    .cell {
+        width: 90px;
+        height: 90px;
+        font-size: 2.8rem;
+    }
+    
+    #turnIndicator {
+        font-size: 1.4rem;
+        padding: 12px 20px;
+    }
+    
+    #scoreDisplay {
+        font-size: 1.2rem;
+    }
+}

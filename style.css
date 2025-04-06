@@ -108,8 +108,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Add different colors for X and O */
@@ -127,18 +134,18 @@ body {
         grid-template-columns: repeat(3, 90px);
         grid-gap: 8px;
     }
-    
+
     .cell {
         width: 90px;
         height: 90px;
         font-size: 2.8rem;
     }
-    
+
     #turnIndicator {
         font-size: 1.4rem;
         padding: 12px 20px;
     }
-    
+
     #scoreDisplay {
         font-size: 1.2rem;
     }
